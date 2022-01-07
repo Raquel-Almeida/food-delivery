@@ -1,0 +1,39 @@
+{
+  "meals": [
+    {
+      "id": 0,
+      "imageUrl": "pizza.jpg",
+      "title": "Pizza",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
+      "price": "8.99€"
+    },
+    {
+      "id": 1,
+      "imageUrl": "pizza.jpg",
+      "title": "Pizza",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
+      "price": "8.99€"
+    },
+    {
+      "id": 2,
+      "imageUrl": "pizza.jpg",
+      "title": "Pizza",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
+      "price": "8.99€"
+    },
+    {
+      "id": 3,
+      "imageUrl": "pizza.jpg",
+      "title": "Pizza",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
+      "price": "8.99€"
+    },
+    {
+      "id": 4,
+      "imageUrl": "pizza.jpg",
+      "title": "Pizza",
+      "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
+      "price": "8.99€"
+    }
+  ]
+}
