@@ -1,0 +1,36 @@
+button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  color: black;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  padding: 1rem 1.25rem;
+}
+
+button:hover,
+button:active {
+  background-color: #dddbd7;
+}
+
+.cart-icon {
+  width: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.total-items {
+  background-color: #dddbd7;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-left: 0.75rem;
+  padding: 0.15rem 0.65rem;
+}
+
+button:hover .total-items {
+  background-color: white;
+}
