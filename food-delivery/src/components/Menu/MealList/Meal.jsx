@@ -1,5 +1,6 @@
 import React from "react";
-import "./Meal.css";
+
+import "./Meal.scss";
 
 export default function Meal(props) {
   let { id, imageUrl, title, description, price } = props.meals;

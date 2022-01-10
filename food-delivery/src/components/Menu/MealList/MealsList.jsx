@@ -1,6 +1,7 @@
 import React from "react";
 import Meal from "./Meal";
-import "./MealsList.css";
+
+import "./MealsList.scss";
 
 export default function MealsList(props) {
   return (

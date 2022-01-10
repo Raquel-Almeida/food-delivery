@@ -1,6 +1,8 @@
 import React from "react";
+
 import cartIcon from "../../assets/cart-icon.png";
-import "./CartButton.css";
+
+import "./CartButton.scss";
 
 export default function CartButton() {
   return (

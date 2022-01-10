@@ -1,8 +1,8 @@
+@import "../../sass/main.scss";
+
 .cart-button {
+  @include flexCenter();
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 25px;
   color: black;
   cursor: pointer;
@@ -11,11 +11,10 @@
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
   font-weight: bold;
   padding: 1rem 1.25rem;
-}
 
-.cart-button:hover,
-.cart-button:active {
-  background-color: #dddbd7;
+  &:hover {
+    background-color: $primaryColor;
+  }
 }
 
 .cart-icon {
@@ -24,7 +23,7 @@
 }
 
 .total-items {
-  background-color: #dddbd7;
+  background-color: $primaryColor;
   border-radius: 25px;
   font-weight: bold;
   margin-left: 0.75rem;
