@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MealsList from "./MealsList";
+import MealsList from "./MealList/MealsList";
 
 import "./MealsMenu.scss";
 
