@@ -1,7 +1,7 @@
 @import "../../sass/main.scss";
 
 .cart-button {
-  @include flexCenter();
+  @include flexCenter(row);
   height: 100%;
   border-radius: 25px;
   color: black;
@@ -15,21 +15,21 @@
   &:hover {
     background-color: $primaryColor;
   }
-}
 
-.cart-icon {
-  width: 1.25rem;
-  margin-right: 0.5rem;
-}
+  &:hover .total-items {
+    background-color: white;
+  }
 
-.total-items {
-  background-color: $primaryColor;
-  border-radius: 25px;
-  font-weight: bold;
-  margin-left: 0.75rem;
-  padding: 0.15rem 0.65rem;
-}
+  .cart-icon {
+    width: 1.25rem;
+    margin-right: 0.5rem;
+  }
 
-button:hover .total-items {
-  background-color: white;
+  .total-items {
+    background-color: $primaryColor;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-left: 0.75rem;
+    padding: 0.15rem 0.65rem;
+  }
 }

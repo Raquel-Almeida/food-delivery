@@ -8,42 +8,41 @@ body {
 }
 
 header {
-  @include flexCenter();
+  @include flexCenter(row);
   width: 100%;
   height: 70px;
   position: fixed;
   justify-content: space-between;
   background-color: transparent;
   padding: 10px;
-}
 
-.brand {
-  @include flexCenter();
+  .brand {
+    @include flexCenter(row);
+    height: 100%;
 
-  height: 100%;
-}
+    .logo {
+      height: 100%;
+      margin-right: 10px;
+    }
 
-.logo {
-  height: 100%;
-  margin-right: 10px;
-}
-
-h1 {
-  font-family: "Bebas Neue", cursive;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 2.25rem;
-  white-space: nowrap;
+    h1 {
+      font-family: "Bebas Neue", cursive;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 2.25rem;
+      white-space: nowrap;
+    }
+  }
 }
 
 .hero {
   width: 100%;
   height: 60vh;
-}
 
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 60%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 60%;
+  }
 }
