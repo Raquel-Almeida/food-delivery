@@ -1,7 +1,7 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import MealsList from "./MealsList";
-import "./MealsMenu.css";
+
+import "./MealsMenu.scss";
 
 export default function MealsMenu() {
   const [meals, setMeals] = useState([]);
