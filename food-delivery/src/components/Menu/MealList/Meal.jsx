@@ -1,5 +1,7 @@
 import React from "react";
 
+import addToCartIcon from "../../../assets/add-to-cart-icon.png";
+
 import "./Meal.scss";
 
 export default function Meal(props) {
@@ -15,13 +17,16 @@ export default function Meal(props) {
       <div className="meal-info">
         <h3>{title}</h3>
         <p>{description}</p>
-        <p>
+        <p className="meal-price">
           <b>{price}</b>
         </p>
+        <section className="add-to-cart">
+          <button onClick={handleMealClick}>
+            <img src={addToCartIcon} alt="Add To Cart" />
+            <span>Add To Cart</span>
+          </button>
+        </section>
       </div>
-      <section>
-        <button onClick={handleMealClick}>Add To Cart</button>
-      </section>
     </article>
   );
 }

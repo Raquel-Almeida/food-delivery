@@ -2,6 +2,27 @@
 
 @import "../../sass/main.scss";
 
+.meals-menu {
+  width: 80vw;
+  margin: 0 auto;
+
+  .meals-menu-header {
+    @include flexCenter(row);
+    max-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+
+    h2 {
+      text-align: center;
+    }
+
+    .search-container {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
 h2 {
   padding: 50px;
   font-family: "Bebas Neue", cursive;
@@ -9,4 +30,20 @@ h2 {
   font-weight: 900;
   font-size: 3.25rem;
   text-align: center;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 900px) {
+  .meals-menu-header {
+    @include flexCenter(column !important);
+
+    h2 {
+      padding: 50px 50px 20px 50px;
+    }
+
+    .search-container {
+      position: relative !important;
+      margin-bottom: 50px;
+    }
+  }
 }

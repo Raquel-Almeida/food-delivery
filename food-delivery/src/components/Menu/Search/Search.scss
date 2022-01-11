@@ -1,0 +1,10 @@
+@import "../../../sass/main.scss";
+
+input {
+  background-color: $secondaryColor;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
