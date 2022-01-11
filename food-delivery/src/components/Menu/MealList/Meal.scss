@@ -1,62 +1,132 @@
 @import "../../../sass/main.scss";
 
-article {
-  @include flexCenter();
+.meal {
+  @include flexCenter(row);
+  width: calc(50% - 25px);
   height: 25vh;
-  width: 60vw;
-  max-width: 700px;
-  min-width: 350px;
   position: relative;
   justify-content: space-between;
   background-color: #f5f4f3;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
-  margin: 20px auto;
   overflow: hidden;
   transition: transform 0.3s;
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .add-to-cart {
+      left: 0;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 35%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .meal-info {
+    @include flexCenter(column);
+    height: 100%;
+    position: relative;
+    padding: 25px 50px;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .add-to-cart {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    transition: all 0.5s;
+
+    &:hover {
+      width: 120px;
+
+      button span {
+        width: 85px;
+      }
+    }
+
+    button {
+      @include flexCenter(row);
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      background-color: white;
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+      font-weight: bold;
+      font-size: 1rem;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+      transition: all 1s;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $primaryColor;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+
+      span {
+        width: 0px;
+        white-space: nowrap;
+        text-overflow: clip;
+        display: block;
+        overflow: hidden;
+        font-size: 0.75rem;
+        transition: all 0.5s;
+
+        &::before {
+          content: "\00a0\00a0";
+        }
+      }
+    }
+  }
 }
 
-article:nth-child(even) {
-  flex-direction: row-reverse;
-}
+@media screen and (max-width: 900px) {
+  .meal {
+    @include flexCenter(column);
+    width: 80vw;
+    height: fit-content;
+    justify-content: space-between;
 
-article:hover {
-  transform: scale(1.02);
-}
+    &:nth-child(even) {
+      @include flexCenter(column);
+      justify-content: space-between;
+    }
 
-article img {
-  height: 100%;
-  width: 35%;
-  object-fit: cover;
-}
+    img {
+      height: 125px;
+      width: 100%;
+      object-fit: cover;
+    }
 
-.meal div {
-  padding: 30px;
-}
+    .meal-info {
+      padding: 10px 40px;
+    }
 
-.meal section {
-  width: 35%;
-  height: 100%;
-  position: absolute;
-}
+    .add-to-cart {
+      margin: 10px auto 0 auto;
+      position: static;
+      width: 120px;
 
-.meal section button {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  background-color: $primaryColor;
-  justify-self: top;
-  border: none;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-  font-size: 1.75rem;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  transition: opacity 1s;
-  text-transform: uppercase;
-}
-
-.meal section button:hover {
-  background-color: $primaryColor;
-  opacity: 0.8;
+      button span {
+        width: 85px;
+      }
+    }
+  }
 }
