@@ -3,7 +3,9 @@
 .meal {
   @include flexCenter(row);
   width: calc(50% - 25px);
-  height: 25vh;
+  height: 35vh;
+  max-height: 250px;
+  min-height: 210px;
   position: relative;
   justify-content: space-between;
   background-color: #f5f4f3;
@@ -15,7 +17,7 @@
   &:nth-child(even) {
     flex-direction: row-reverse;
 
-    .add-to-cart {
+    .add-to-cart-container {
       left: 0;
     }
   }
@@ -24,7 +26,7 @@
     transform: scale(1.05);
   }
 
-  img {
+  .meal-img {
     width: 35%;
     height: 100%;
     object-fit: cover;
@@ -37,62 +39,29 @@
     padding: 25px 50px;
     gap: 10px;
     text-align: center;
-  }
 
-  .add-to-cart {
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 10px;
-    transition: all 0.5s;
+    .meal-description {
+      // Limit to paragraph length
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
 
-    &:hover {
-      width: 120px;
-
-      button span {
-        width: 85px;
+    @media screen and (max-height: 620px) {
+      .meal-description {
+        -webkit-line-clamp: 3 !important;
+        line-clamp: 3 !important;
       }
     }
 
-    button {
-      @include flexCenter(row);
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      background-color: white;
-      border: none;
-      border-radius: 25px;
-      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
-      font-weight: bold;
-      font-size: 1rem;
-      text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-      transition: all 1s;
-      text-transform: uppercase;
-
-      &:hover {
-        background-color: $primaryColor;
-      }
-
-      img {
-        width: 20px;
-        height: 20px;
-      }
-
-      span {
-        width: 0px;
-        white-space: nowrap;
-        text-overflow: clip;
-        display: block;
-        overflow: hidden;
-        font-size: 0.75rem;
-        transition: all 0.5s;
-
-        &::before {
-          content: "\00a0\00a0";
-        }
-      }
+    .add-to-cart-container {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 5px;
     }
   }
 }
@@ -102,6 +71,7 @@
     @include flexCenter(column);
     width: 80vw;
     height: fit-content;
+    max-height: none;
     justify-content: space-between;
 
     &:nth-child(even) {
@@ -109,7 +79,7 @@
       justify-content: space-between;
     }
 
-    img {
+    .meal-img {
       height: 125px;
       width: 100%;
       object-fit: cover;
@@ -119,13 +89,15 @@
       padding: 10px 40px;
     }
 
-    .add-to-cart {
-      margin: 10px auto 0 auto;
-      position: static;
-      width: 120px;
+    .add-to-cart-container {
+      position: static !important;
 
-      button span {
-        width: 85px;
+      .add-to-cart {
+        width: 120px;
+
+        span {
+          width: 85px;
+        }
       }
     }
   }

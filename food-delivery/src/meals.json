@@ -10,14 +10,14 @@
     {
       "id": 1,
       "imageUrl": "pizza.jpg",
-      "title": "Pizza",
+      "title": "Sushi",
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
       "price": "8.99€"
     },
     {
       "id": 2,
       "imageUrl": "pizza.jpg",
-      "title": "Pizza",
+      "title": "Lasanha",
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
       "price": "8.99€"
     },
@@ -31,7 +31,7 @@
     {
       "id": 4,
       "imageUrl": "pizza.jpg",
-      "title": "Pizza",
+      "title": "Hamburguer",
       "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed vitae inventore nostrum nobis!",
       "price": "8.99€"
     },
