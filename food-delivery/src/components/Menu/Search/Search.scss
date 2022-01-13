@@ -6,5 +6,11 @@ input {
   border: none;
   border-radius: 10px;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
-  outline: none;
+  outline: rgb(177, 177, 177);
+  width: 30vw;
+  max-width: 210px;
+
+  &:focus {
+    background-color: $primaryColor;
+  }
 }

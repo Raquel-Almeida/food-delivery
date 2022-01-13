@@ -1,6 +1,5 @@
 import React from "react";
-
-import addToCartIcon from "../../../assets/add-to-cart-icon.png";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 import "./Meal.scss";
 
@@ -13,18 +12,15 @@ export default function Meal(props) {
 
   return (
     <article className="meal">
-      <img src={`assets/${imageUrl}`} alt="Meal" />
+      <img className="meal-img" src={`assets/${imageUrl}`} alt="Meal" />
       <div className="meal-info">
         <h3>{title}</h3>
-        <p>{description}</p>
+        <p className="meal-description">{description}</p>
         <p className="meal-price">
           <b>{price}</b>
         </p>
-        <section className="add-to-cart">
-          <button onClick={handleMealClick}>
-            <img src={addToCartIcon} alt="Add To Cart" />
-            <span>Add To Cart</span>
-          </button>
+        <section className="add-to-cart-container">
+          <AddToCartButton onAddToCartClick={handleMealClick} />
         </section>
       </div>
     </article>

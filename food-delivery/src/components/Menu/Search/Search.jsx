@@ -1,7 +1,19 @@
-import React from "react";
-
 import "./Search.scss";
 
-export default function Search() {
-  return <input type="text" placeholder="Search..."></input>;
+export default function Search(props) {
+  const handleSearchInput = (searchValue) => {
+    props.onSearchInput(searchValue);
+  };
+
+  return (
+    <>
+      <input
+        type="text"
+        placeholder="Search..."
+        onChange={(e) => {
+          handleSearchInput(e.target.value);
+        }}
+      />
+    </>
+  );
 }
