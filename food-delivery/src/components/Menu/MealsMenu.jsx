@@ -12,7 +12,7 @@ export default function MealsMenu() {
   let [filteredMeals, setFilteredeMeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/meals")
+    fetch("https://61ddf60af60e8f0017668b59.mockapi.io/api/menu")
       .then((resp) => {
         if (resp.ok) return resp.json();
         throw new Error("Oops! Something went wrong while requesting meals.");

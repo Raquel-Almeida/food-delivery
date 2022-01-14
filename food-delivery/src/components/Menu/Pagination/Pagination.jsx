@@ -40,7 +40,7 @@ export default function Pagination(props) {
         </div>
         <div className="pagination">
           <button onClick={goToPreviousPage} className={`prev ${currentPage === 1 ? "disabled" : ""}`}>
-            prev
+            {"<"}
           </button>
 
           {getPaginationGroup().map((item, i) => (
@@ -50,7 +50,7 @@ export default function Pagination(props) {
           ))}
 
           <button onClick={goToNextPage} className={`next ${currentPage === pages ? "disabled" : ""}`}>
-            next
+            {">"}
           </button>
         </div>
       </div>
