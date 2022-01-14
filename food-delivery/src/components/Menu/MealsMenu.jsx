@@ -6,18 +6,22 @@ import MealDetails from "./MealDetails/MealDetails";
 import "./MealsMenu.scss";
 
 export default function MealsMenu() {
-  let [meals, setMeals] = useState([]);
+  const [meals, setMeals] = useState([]);
+  const [error, setError] = useState("");
 
   let [filteredMeals, setFilteredeMeals] = useState([]);
 
   useEffect(() => {
-    // fetch("https://e515-85-241-81-222.ngrok.io/meals") // ngrok
     fetch("http://localhost:3001/meals")
-      .then((resp) => resp.json())
+      .then((resp) => {
+        if (resp.ok) return resp.json();
+        throw new Error("Oops! Something went wrong while requesting meals.");
+      })
       .then((data) => {
         setMeals(data);
         setFilteredeMeals(data);
-      });
+      })
+      .catch((error) => setError(error.message));
   }, []);
 
   const handleMealInfo = (id) => {
@@ -31,6 +35,8 @@ export default function MealsMenu() {
       })
     );
   };
+
+  if (error) return <p className="error">{error}</p>;
 
   return (
     <section className="meals-menu">
