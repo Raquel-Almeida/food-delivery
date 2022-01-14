@@ -2,11 +2,6 @@
 
 @import "../../sass/main.scss";
 
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
 header {
   @include flexCenter(row);
   width: 100%;
