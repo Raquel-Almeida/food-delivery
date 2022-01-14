@@ -12,9 +12,9 @@ export default function Meal(props) {
 
   return (
     <article className="meal">
-      <img className="meal-img" src={`assets/${mealsData.imageUrl}`} alt="Meal" />
+      <img className="meal-img" src={`assets/${mealsData.image}`} alt="Meal" />
       <div className="meal-info">
-        <h3>{mealsData.title}</h3>
+        <h3>{mealsData.name}</h3>
         <p className="meal-description">{mealsData.description}</p>
         <p className="meal-price">
           <b>{mealsData.price}</b>

@@ -1,1 +1,48 @@
 @import "../../../sass/main.scss";
+
+.pagination {
+  @include flexCenter(row);
+  gap: 15px;
+}
+
+.paginationItem {
+  width: 15px;
+  height: 25px;
+  background: #fff;
+  position: relative;
+  cursor: pointer;
+  border: none;
+}
+
+.paginationItem span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prev,
+.next {
+  @include flexCenter(row);
+  width: 25px;
+  height: 25px;
+  background: rgb(247, 247, 247);
+  border-radius: 25px;
+  border: none;
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.paginationItem.active {
+  border-bottom: 2px solid black;
+  margin-bottom: -2px;
+  pointer-events: none;
+}
+
+.prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: #999;
+}
