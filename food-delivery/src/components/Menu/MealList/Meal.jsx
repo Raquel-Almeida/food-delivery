@@ -4,10 +4,11 @@ import AddToCartButton from "../AddToCartButton/AddToCartButton";
 import "./Meal.scss";
 
 export default function Meal(props) {
-  let mealsData = props.meals;
+  let mealsData = props.data;
 
+  // Passes the item id to the parent component (Pagination.jsx)
   const handleMealClick = () => {
-    props.onMealClick(mealsData.id);
+    props.onItemClick(mealsData.id);
   };
 
   return (

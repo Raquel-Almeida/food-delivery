@@ -5,6 +5,7 @@ import addToCartIcon from "../../../assets/add-to-cart-icon.png";
 import "./AddToCartButton.scss";
 
 export default function AddToCartButton(props) {
+  // Triggers function call (handleMealClick) on the parent component (Meal.jsx)
   const handleAddToCartClick = () => {
     props.onAddToCartClick();
   };

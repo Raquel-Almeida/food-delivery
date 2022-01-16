@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MealsList from "./MealList/MealsList";
 import Search from "./Search/Search";
-import MealDetails from "./MealDetails/MealDetails";
 
 import "./MealsMenu.scss";
 
@@ -10,7 +9,9 @@ export default function MealsMenu() {
   const [error, setError] = useState("");
 
   let [filteredMeals, setFilteredeMeals] = useState([]);
+  let [loaded, setLoaded] = useState(false);
 
+  // Fetches values from API & sets initial list values
   useEffect(() => {
     fetch("https://61ddf60af60e8f0017668b59.mockapi.io/api/menu")
       .then((resp) => {
@@ -24,10 +25,7 @@ export default function MealsMenu() {
       .catch((error) => setError(error.message));
   }, []);
 
-  const handleMealInfo = (id) => {
-    console.log(id);
-  };
-
+  // Filters each meal by searched value and returns the ones that include it as a title, setting filtered meals
   const handleSearchMeal = (searchValue) => {
     setFilteredeMeals(
       meals.filter((meal) => {
@@ -35,8 +33,13 @@ export default function MealsMenu() {
       })
     );
   };
-
+  // Return an error if something goes wrong while fetching data from API
   if (error) return <p className="error">{error}</p>;
+
+  // Once the data is fetched, sets loaded variable to true (only happens once, when "loaded" is false)
+  if (filteredMeals.length > 0 && !loaded) {
+    setLoaded(true);
+  }
 
   return (
     <section className="meals-menu">
@@ -46,8 +49,8 @@ export default function MealsMenu() {
           <Search onSearchInput={handleSearchMeal} />
         </div>
       </div>
-      <MealsList meals={filteredMeals} onMealInfo={handleMealInfo} />
-      <MealDetails />
+      {/* Shows loading message while fetching is not finished*/}
+      {loaded ? <MealsList meals={filteredMeals} /> : <span>Loading...</span>}{" "}
     </section>
   );
 }
