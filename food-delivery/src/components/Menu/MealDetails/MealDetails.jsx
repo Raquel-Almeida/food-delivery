@@ -21,7 +21,7 @@ export default function MealDetails(props) {
         <p className="toppings-title">Choose your toppings:</p>
         <form>
           <input type="checkbox" name="ham" id="ham" />
-          <label for="ham">Ham</label>
+          <label htmlFor="ham">Ham</label>
         </form>
         <button className="confirm-details-button" onClick={confirmMealHandler}>
           Confirm
