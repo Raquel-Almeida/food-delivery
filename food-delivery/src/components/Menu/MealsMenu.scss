@@ -15,7 +15,13 @@
     margin: 0 auto;
 
     h2 {
+      padding: 50px;
+      font-family: "Bebas Neue", cursive;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 3.25rem;
       text-align: center;
+      white-space: nowrap;
     }
 
     .search-container {
@@ -23,16 +29,6 @@
       right: 0;
     }
   }
-}
-
-h2 {
-  padding: 45px;
-  font-family: "Bebas Neue", cursive;
-  text-transform: uppercase;
-  font-weight: 900;
-  font-size: 3.25rem;
-  text-align: center;
-  white-space: nowrap;
 }
 
 .error {
