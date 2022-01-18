@@ -29,7 +29,7 @@ export default function MealsMenu() {
   const handleSearchMeal = (searchValue) => {
     setFilteredeMeals(
       meals.filter((meal) => {
-        return meal.title.toLowerCase().includes(searchValue.toLowerCase());
+        return meal.name.toLowerCase().includes(searchValue.toLowerCase());
       })
     );
   };

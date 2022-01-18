@@ -6,20 +6,24 @@ import Meal from "./Meal";
 import "./MealsList.scss";
 
 export default function MealsList(props) {
-  //**TODO** Open meal details
-  const handleMealInfo = (id) => {
-    console.log("Meal details " + id);
+  let [showDetails, setShowDetails] = useState(false);
+
+  // Open meal details
+  const showDetailsHandler = (id) => {
     setShowDetails(true);
   };
 
-  let [showDetails, setShowDetails] = useState(false);
+  // Closes meal details
+  const closeDetailsHandler = (id) => {
+    setShowDetails(false);
+  };
 
   return (
     <section className="meals-list">
-      <Pagination dataLimit={1} pageLimit={3} list={props.meals} RenderComponent={Meal} onItemClicked={handleMealInfo} />
       <div className={`${showDetails ? "" : "hidden"}`}>
-        <MealDetails />
+        <MealDetails onCloseDetailsHandler={closeDetailsHandler} />
       </div>
+      <Pagination dataLimit={6} pageLimit={3} list={props.meals} RenderComponent={Meal} onItemClicked={showDetailsHandler} />
     </section>
   );
 }
