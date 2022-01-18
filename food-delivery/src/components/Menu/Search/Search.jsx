@@ -9,6 +9,7 @@ export default function Search(props) {
   return (
     <>
       <input
+        className="search-input"
         type="text"
         placeholder="Search..."
         onChange={(e) => {

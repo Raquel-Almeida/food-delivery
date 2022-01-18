@@ -4,50 +4,49 @@
   @include flexCenter(row);
   gap: 15px;
   padding: 50px;
-}
 
-.pagination-item {
-  width: 15px;
-  height: 25px;
-  background: #fff;
-  position: relative;
-  cursor: pointer;
-  border: none;
-}
+  .pagination-item {
+    width: 15px;
+    height: 25px;
+    background: #fff;
+    position: relative;
+    cursor: pointer;
+    border: none;
 
-.pagination-item span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    &.active {
+      border-bottom: 2px solid black;
+      margin-bottom: -2px;
+      pointer-events: none;
+    }
 
-.prev,
-.next {
-  @include flexCenter(row);
-  width: 25px;
-  height: 25px;
-  background: rgb(247, 247, 247);
-  border-radius: 25px;
-  border: none;
-  padding: 10px;
-  margin: 0 10px;
-  cursor: pointer;
-}
+    &.hidden {
+      display: none;
+    }
 
-.pagination-item.active {
-  border-bottom: 2px solid black;
-  margin-bottom: -2px;
-  pointer-events: none;
-}
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 
-.pagination-item.hidden {
-  display: none;
-}
+  .prev,
+  .next {
+    @include flexCenter(row);
+    width: 25px;
+    height: 25px;
+    background: rgb(247, 247, 247);
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
 
-.prev.disabled,
-.next.disabled {
-  pointer-events: none;
-  box-shadow: none;
-  color: #999;
+    &.disabled {
+      pointer-events: none;
+      box-shadow: none;
+      color: #999;
+    }
+  }
 }
