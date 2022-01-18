@@ -33,6 +33,7 @@ export default function MealsMenu() {
       })
     );
   };
+
   // Return an error if something goes wrong while fetching data from API
   if (error) return <p className="error">{error}</p>;
 
