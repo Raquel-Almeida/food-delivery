@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import MealsList from "./MealList/MealsList";
 import Search from "./Search/Search";
+import Pagination from "./Pagination/Pagination";
+import Meal from "./MealList/Meal/Meal";
+import MealDetails from "./MealDetails/MealDetails";
 
 import "./MealsMenu.scss";
 
@@ -10,6 +12,9 @@ export default function MealsMenu() {
 
   let [filteredMeals, setFilteredeMeals] = useState([]);
   let [loaded, setLoaded] = useState(false);
+
+  let [showDetails, setShowDetails] = useState(false);
+  let [clickedMeal, setClickedMeal] = useState({ name: null, description: null, extras: [] });
 
   // Fetches values from API & sets initial list values
   useEffect(() => {
@@ -42,6 +47,19 @@ export default function MealsMenu() {
     setLoaded(true);
   }
 
+  // Opens meal details
+  const showDetailsHandler = (id) => {
+    setClickedMeal(filteredMeals.find((meal) => meal.id === id));
+    setShowDetails(true);
+    document.body.setAttribute("style", "overflow-y: hidden");
+  };
+
+  // Closes meal details
+  const closeDetailsHandler = (id) => {
+    setShowDetails(false);
+    document.body.setAttribute("style", "overflow-y: auto");
+  };
+
   return (
     <section className="meals-menu">
       <div className="meals-menu-header">
@@ -51,7 +69,13 @@ export default function MealsMenu() {
         </div>
       </div>
       {/* Shows loading message while fetching is not finished*/}
-      {loaded ? <MealsList meals={filteredMeals} /> : <span>Loading...</span>}{" "}
+      {loaded ? 
+      <section className="meals-list">
+        <div className={`${showDetails ? "" : "hidden"}`}>
+          <MealDetails meal={clickedMeal} onCloseDetails={closeDetailsHandler} />
+        </div>
+        <Pagination dataLimit={6} pageLimit={3} list={filteredMeals} RenderComponent={Meal} onItemClicked={showDetailsHandler} />
+      </section> : <span>Loading...</span>}
     </section>
   );
 }
