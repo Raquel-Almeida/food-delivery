@@ -10,7 +10,7 @@ export default function MealsList(props) {
 
   let [clickedMeal, setClickedMeal] = useState({ name: null, description: null, extras: [] });
 
-  // Open meal details
+  // Opens meal details
   const showDetailsHandler = (id) => {
     setClickedMeal(props.meals.find((meal) => meal.id === id));
     setShowDetails(true);

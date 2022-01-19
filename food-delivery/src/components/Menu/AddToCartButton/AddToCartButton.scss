@@ -13,6 +13,7 @@
   font-weight: bold;
   text-transform: uppercase;
   transition: all 0.5s;
+  color: black;
 
   &:hover {
     width: 120px;
@@ -20,7 +21,6 @@
 
     span {
       width: 85px;
-      color: black !important;
     }
   }
 

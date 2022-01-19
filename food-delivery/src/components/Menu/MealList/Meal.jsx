@@ -21,7 +21,7 @@ export default function Meal(props) {
           <b>{mealsData.price}</b>
         </p>
         <section className="add-to-cart-container">
-          <AddToCartButton onAddToCartClick={handleMealClick} onClick={window.scrollTo({ top: 1400, behavior: "smooth" })} />
+          <AddToCartButton onAddToCartClick={handleMealClick} />
         </section>
       </div>
     </article>
