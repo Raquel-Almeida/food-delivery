@@ -26,9 +26,9 @@ export default function MealsList(props) {
   return (
     <section className="meals-list">
       <div className={`${showDetails ? "" : "hidden"}`}>
-        <MealDetails meal={clickedMeal} onCloseDetails={closeDetailsHandler} onItemClicked={showDetailsHandler} />
+        <MealDetails meal={clickedMeal} onCloseDetails={closeDetailsHandler} />
       </div>
-      <Pagination dataLimit={6} pageLimit={3} list={props.meals} RenderComponent={Meal} />
+      <Pagination dataLimit={6} pageLimit={3} list={props.meals} RenderComponent={Meal} onItemClicked={showDetailsHandler} />
     </section>
   );
 }
