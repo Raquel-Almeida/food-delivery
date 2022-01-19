@@ -6,13 +6,13 @@
   padding: 50px;
 
   .pagination-item {
+    position: relative;
     width: 15px;
     height: 25px;
     background: #fff;
     border: none;
     color: black;
     cursor: pointer;
-    position: relative;
 
     &.active {
       border-bottom: 2px solid black;
@@ -46,9 +46,9 @@
     padding: 10px;
 
     &.disabled {
-      pointer-events: none;
       box-shadow: none;
       color: #999;
+      pointer-events: none;
     }
   }
 }

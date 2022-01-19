@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-@import "../../../sass/main.scss";
+@import "../../../../sass/main.scss";
 
 .meal {
   @include flexCenter(row);
+  justify-content: space-between;
   width: calc(50% - 25px);
   height: 35vh;
   max-height: 250px;
   min-height: 210px;
-  justify-content: space-between;
   background-color: #f5f4f3;
   border-radius: 10px;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
@@ -30,16 +30,16 @@
   .meal-img {
     width: 35%;
     height: 100%;
-    object-fit: cover;
     box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
   }
 
   .meal-info {
     @include flexCenter(column);
-    height: 100%;
     position: relative;
-    padding: 25px 50px;
+    height: 100%;
     gap: 10px;
+    padding: 25px 50px;
     text-align: center;
 
     h3 {
@@ -68,8 +68,8 @@
 
     .add-to-cart-container {
       position: absolute;
-      bottom: 0;
       right: 0;
+      bottom: 0;
       margin: 5px;
     }
   }
@@ -78,10 +78,10 @@
 @media screen and (max-width: 900px) {
   .meal {
     @include flexCenter(column);
+    justify-content: space-between;
     width: 80vw;
     height: fit-content;
     max-height: none;
-    justify-content: space-between;
 
     &:nth-child(even) {
       @include flexCenter(column);
@@ -89,8 +89,8 @@
     }
 
     .meal-img {
-      height: 125px;
       width: 100%;
+      height: 125px;
       object-fit: cover;
     }
 
