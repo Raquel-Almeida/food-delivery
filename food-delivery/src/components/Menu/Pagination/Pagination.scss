@@ -9,9 +9,10 @@
     width: 15px;
     height: 25px;
     background: #fff;
-    position: relative;
-    cursor: pointer;
     border: none;
+    color: black;
+    cursor: pointer;
+    position: relative;
 
     &.active {
       border-bottom: 2px solid black;
@@ -37,11 +38,12 @@
     width: 25px;
     height: 25px;
     background: rgb(247, 247, 247);
-    border-radius: 25px;
     border: none;
-    padding: 10px;
-    margin: 0 10px;
+    border-radius: 25px;
+    color: black;
     cursor: pointer;
+    margin: 0 10px;
+    padding: 10px;
 
     &.disabled {
       pointer-events: none;

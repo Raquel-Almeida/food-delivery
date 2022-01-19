@@ -14,6 +14,9 @@ export default function Cart(props) {
   return (
     <div className="cart-container">
       <div className="cart">
+        <button className="close-cart-button" onClick={props.onCloseCart}>
+          x
+        </button>
         {cartItems}
         <div>Total Amount</div>
         <div>25.99€</div>
