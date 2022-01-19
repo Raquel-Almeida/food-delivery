@@ -5,8 +5,8 @@ import "./Cart.scss";
 export default function Cart(props) {
   const cartItems = (
     <ul className="cart-items">
-      {[{ id: "1", name: "pizza", amount: 2, price: 12.99 }].map((item) => (
-        <li>{item.name}</li>
+      {[{ id: "1", name: "pizza", amount: 2, price: 12.99 }].map((item, i) => (
+        <li key={i}>{item.name}</li>
       ))}
     </ul>
   );

@@ -4,8 +4,8 @@ import "./MealDetails.scss";
 
 export default function MealDetails(props) {
   // **TODO**
-  const confirmMealHandler = (id) => {
-    console.log("Confirm " + id);
+  const confirmMealHandler = () => {
+    console.log("Confirm");
   };
 
   return (
@@ -23,7 +23,6 @@ export default function MealDetails(props) {
           <p className="toppings-title">Choose your extras:</p>
           <form>
             {props.meal.extras.map((extra, i) => {
-              console.log("Entered");
               return (
                 <div className="meal-extras" key={i}>
                   <input type="checkbox" name="extra" />

@@ -28,6 +28,18 @@
       right: 0;
     }
   }
+
+  .hidden {
+    display: none;
+  }
+
+  .meals-list .data-container {
+    @include flexCenter(row);
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 50px;
+    margin: 0 auto;
+  }
 }
 
 .error {
