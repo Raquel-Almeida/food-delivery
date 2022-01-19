@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CartButton from "../Header/CartButton/CartButton";
-import Cart from "../Cart/Cart";
+import Cart from "./Cart/Cart";
 
 import logoIcon from "../../assets/logo-icon.png";
 import hero from "../../assets/hero.png";
