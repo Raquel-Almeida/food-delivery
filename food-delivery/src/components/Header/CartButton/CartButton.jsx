@@ -1,6 +1,6 @@
 import React from "react";
 
-import cartIcon from "../../assets/cart-icon.png";
+import cartIcon from "../../../assets/cart-icon.png";
 
 import "./CartButton.scss";
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CartButton from "./CartButton";
+import CartButton from "../Header/CartButton/CartButton";
 import Cart from "../Cart/Cart";
 
 import logoIcon from "../../assets/logo-icon.png";
@@ -13,12 +13,13 @@ export default function Header(props) {
   // Opens cart
   const showCartHandler = () => {
     setShowCart(true);
-    console.log("show");
+    document.body.setAttribute("style", "overflow-y: hidden");
   };
 
   // Closes cart
   const closeCartHandler = () => {
     setShowCart(false);
+    document.body.setAttribute("style", "overflow-y: auto");
   };
 
   return (
