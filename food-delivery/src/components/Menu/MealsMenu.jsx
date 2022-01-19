@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Search from "./Search/Search";
 import Pagination from "./Pagination/Pagination";
-import Meal from "./MealList/Meal/Meal";
+import Meal from "./Meal/Meal";
 import MealDetails from "./MealDetails/MealDetails";
 
 import "./MealsMenu.scss";
@@ -69,13 +69,16 @@ export default function MealsMenu() {
         </div>
       </div>
       {/* Shows loading message while fetching is not finished*/}
-      {loaded ? 
-      <section className="meals-list">
-        <div className={`${showDetails ? "" : "hidden"}`}>
-          <MealDetails meal={clickedMeal} onCloseDetails={closeDetailsHandler} />
-        </div>
-        <Pagination dataLimit={6} pageLimit={3} list={filteredMeals} RenderComponent={Meal} onItemClicked={showDetailsHandler} />
-      </section> : <span>Loading...</span>}
+      {loaded ? (
+        <section className="meals-list">
+          <div className={`${showDetails ? "" : "hidden"}`}>
+            <MealDetails meal={clickedMeal} onCloseDetails={closeDetailsHandler} />
+          </div>
+          <Pagination dataLimit={6} pageLimit={3} list={filteredMeals} RenderComponent={Meal} onItemClicked={showDetailsHandler} />
+        </section>
+      ) : (
+        <span>Loading...</span>
+      )}
     </section>
   );
 }
