@@ -4,7 +4,8 @@
   @include flexCenter(row);
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 70px);
+  bottom: 0;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 1;
 
@@ -21,6 +22,16 @@
     gap: 30px;
     margin: 0 auto;
     padding: 30px 50px;
+    animation: appear 0.2s ease-in;
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
     .close-cart-button {
       position: absolute;
@@ -55,17 +66,60 @@
       text-transform: uppercase;
     }
 
+    .cart-items {
+      width: 100%;
+      height: fit-content;
+      max-height: 300px;
+      overflow-y: auto;
+
+      .meal-cart-item {
+        @include flexCenter(row);
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(207, 207, 207);
+
+        .meal-cart-info p:first-child {
+          font-weight: 700;
+        }
+
+        .remove-item-button {
+          background-color: $titleColor;
+          border: none;
+          border-radius: 25px;
+          color: white;
+          cursor: pointer;
+          font-size: 0.65rem;
+          padding: 5px 10px;
+          margin-right: 10px;
+          text-transform: uppercase;
+          transition: all 0.2s ease-in-out;
+
+          &:hover {
+            background-color: white;
+            color: black;
+          }
+        }
+      }
+
+      .meal-cart-item:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+    }
+
     ul {
       list-style-type: none;
-      text-transform: capitalize;
     }
 
     .total-amount-container {
       @include flexCenter(column);
       align-items: flex-start;
       width: 100%;
-      border-top: 1px solid rgb(197, 197, 197);
-      padding-top: 20px;
+      border-top: 1px solid rgb(116, 116, 116);
+      padding-top: 5px;
+      font-weight: 700;
     }
 
     .confirm-cart-button {
@@ -94,5 +148,9 @@
 @media screen and (max-width: 900px) {
   .cart {
     width: 85% !important;
+
+    .cart-items {
+      max-height: 250px !important;
+    }
   }
 }

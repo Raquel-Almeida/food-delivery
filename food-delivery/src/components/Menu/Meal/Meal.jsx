@@ -18,7 +18,7 @@ export default function Meal(props) {
         <h3>{mealsData.name}</h3>
         <p className="meal-description">{mealsData.description}</p>
         <p className="meal-price">
-          <b>{mealsData.price}</b>
+          <b>{mealsData.price}€</b>
         </p>
         <section className="add-to-cart-container">
           <AddToCartButton onAddToCartClick={handleMealClick} />
