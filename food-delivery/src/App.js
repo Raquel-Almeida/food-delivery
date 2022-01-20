@@ -1,17 +1,19 @@
+import React from "react";
+
 import Header from "./components/Header/Header";
 import MealsMenu from "./components/Menu/MealsMenu";
 import Footer from "./components/Footer/Footer";
+import CartProvider from "./store/CartProvider";
 
 import "./App.css";
-import React from "react";
 
 function App() {
   return (
-    <div className="App">
+    <CartProvider>
       <Header />
       <MealsMenu />
       <Footer />
-    </div>
+    </CartProvider>
   );
 }
 

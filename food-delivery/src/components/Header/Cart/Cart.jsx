@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import CartContext from "../../../store/CartContext";
 
 import "./Cart.scss";
 
 export default function Cart(props) {
+  const cartContext = useContext(CartContext);
+
+  const totalAmount = `${cartContext.totalAmount.toFixed(2)}€`;
+
+  const removeItemHandler = (id) => {
+    cartContext.removeItem(id);
+  };
+
   const cartItems = (
     <ul className="cart-items">
-      {[{ id: "1", name: "pizza", amount: 2, price: 12.99 }].map((item, i) => (
-        <li key={i}>{item.name}</li>
+      {cartContext.items.map((item, i) => (
+        <li className="meal-cart-item" key={i}>
+          <div className="meal-cart-info">
+            <p>{item.name}</p>
+            <p>{item.price}€</p>
+            <p>x{item.amount}</p>
+          </div>
+          <button className="remove-item-button" onClick={removeItemHandler.bind(null, item.id)}>
+            Remove
+          </button>
+        </li>
       ))}
     </ul>
   );
@@ -26,7 +45,7 @@ export default function Cart(props) {
         {cartItems}
         <div className="total-amount-container">
           <span>Total Amount</span>
-          <span>25.99€</span>
+          <span>{totalAmount}</span>
         </div>
         <button className="confirm-cart-button" onClick={confirmOrderHandler}>
           Confirm Order

@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import CartContext from "../../../store/CartContext";
 
 import "./MealDetails.scss";
 
 export default function MealDetails(props) {
-  // **TODO**
-  const confirmMealHandler = () => {
-    console.log("Confirm");
+  const cartContext = useContext(CartContext);
+
+  const addToCartHandler = (e) => {
+    e.preventDefault();
+
+    cartContext.addItem({
+      id: props.meal.id,
+      name: props.meal.name,
+      price: props.meal.price,
+      amount: 1,
+    });
   };
 
   return (
@@ -31,7 +41,7 @@ export default function MealDetails(props) {
               );
             })}
           </form>
-          <button className="confirm-details-button" onClick={confirmMealHandler}>
+          <button className="confirm-details-button" onClick={addToCartHandler}>
             Confirm
           </button>
         </div>
