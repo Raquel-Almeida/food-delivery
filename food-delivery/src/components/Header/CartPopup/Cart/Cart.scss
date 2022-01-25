@@ -1,4 +1,4 @@
-@import "../../../sass/main.scss";
+@import "../../../../sass/main.scss";
 
 .cart-container {
   @include flexCenter(row);
@@ -122,7 +122,7 @@
       font-weight: 700;
     }
 
-    .confirm-cart-button {
+    .continue-cart-button {
       align-self: flex-end;
       background-color: $titleColor;
       border: none;
