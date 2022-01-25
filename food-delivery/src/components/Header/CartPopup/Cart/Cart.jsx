@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import CartContext from "../../../store/CartContext";
+import CartContext from "../../../../store/CartContext";
 
 import "./Cart.scss";
 
@@ -31,8 +31,8 @@ export default function Cart(props) {
   );
 
   // **TODO**
-  const confirmOrderHandler = () => {
-    console.log("Confirm Order");
+  const continueOrderHandler = () => {
+    console.log("Continue");
   };
 
   return (
@@ -47,8 +47,8 @@ export default function Cart(props) {
           <span>Total Amount</span>
           <span>{totalAmount}</span>
         </div>
-        <button className="confirm-cart-button" onClick={confirmOrderHandler}>
-          Confirm Order
+        <button className="continue-cart-button" onClick={continueOrderHandler}>
+          Continue
         </button>
       </div>
     </div>
