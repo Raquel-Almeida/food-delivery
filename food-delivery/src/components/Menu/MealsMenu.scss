@@ -29,10 +29,6 @@
     }
   }
 
-  .hidden {
-    display: none;
-  }
-
   .meals-list .data-container {
     @include flexCenter(row);
     flex-wrap: wrap;
