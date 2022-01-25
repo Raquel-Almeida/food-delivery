@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import CartContext from "../../../../store/CartContext";
 
@@ -16,13 +16,13 @@ export default function Cart(props) {
   const cartItems = (
     <ul className="cart-items">
       {cartContext.items.map((item, i) => (
-        <li className="meal-cart-item" key={i}>
-          <div className="meal-cart-info">
+        <li className="item" key={i}>
+          <div className="info">
             <p>{item.name}</p>
             <p>{item.price}€</p>
             <p>x{item.amount}</p>
           </div>
-          <button className="remove-item-button" onClick={removeItemHandler.bind(null, item.id)}>
+          <button className="remove-button" onClick={removeItemHandler.bind(null, item.id)}>
             Remove
           </button>
         </li>
@@ -30,27 +30,17 @@ export default function Cart(props) {
     </ul>
   );
 
-  // **TODO**
-  const continueOrderHandler = () => {
-    console.log("Continue");
-  };
-
   return (
-    <div className="cart-container">
-      <div className="cart">
-        <button className="close-cart-button" onClick={props.onCloseCart}>
-          x
-        </button>
-        <h6>Your Cart</h6>
-        {cartItems}
-        <div className="total-amount-container">
-          <span>Total Amount</span>
-          <span>{totalAmount}</span>
-        </div>
-        <button className="continue-cart-button" onClick={continueOrderHandler}>
-          Continue
-        </button>
+    <>
+      <h6>Your Cart</h6>
+      {cartItems}
+      <div className="total-amount">
+        <span>Total Amount</span>
+        <span>{totalAmount}</span>
       </div>
-    </div>
+      <button className="continue-button" onClick={props.onContinueClick}>
+        Continue
+      </button>
+    </>
   );
 }

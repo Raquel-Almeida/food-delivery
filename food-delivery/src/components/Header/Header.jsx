@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import CartButton from "../Header/CartButton/CartButton";
-import Cart from "./CartPopup/Cart/Cart";
+import CartPopup from "./CartPopup/CartPopup";
 
 import logoIcon from "../../assets/logo-icon.png";
 import hero from "../../assets/hero.png";
 
 import "./Header.scss";
 
-export default function Header(props) {
+export default function Header() {
   let [showCart, setShowCart] = useState(false);
 
   // Opens cart
@@ -32,7 +32,7 @@ export default function Header(props) {
         <CartButton onCartClicked={showCartHandler} />
       </header>
       <div className={`${showCart ? "" : "hidden"}`}>
-        <Cart onCloseCart={closeCartHandler} />
+        <CartPopup onCloseCart={closeCartHandler} />
       </div>
       <div className="hero">
         <img src={hero} alt="Pancake" />
