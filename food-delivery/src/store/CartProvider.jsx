@@ -37,7 +37,8 @@ const cartReducer = (state, action) => {
   if (action.type === "REMOVE_CART_ITEM") {
     const existingCartItemIndex = state.items.findIndex((item) => item.id === action.id);
     const existingItem = state.items[existingCartItemIndex];
-    const updatedTotalAmount = state.totalAmount - existingItem.price;
+    // Math.max chooses the max value between the 2 given variables, preventing negative numbers from showing (-0.00€ in this case)
+    const updatedTotalAmount = Math.max(state.totalAmount - existingItem.price, 0);
 
     let updatedItems;
 

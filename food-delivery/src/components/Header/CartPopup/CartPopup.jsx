@@ -12,15 +12,21 @@ export default function CartPopup(props) {
     setShowUserDetails(true);
   };
 
+  let onCloseCartHandler = () => {
+    setShowUserDetails(false);
+    props.onCloseCart();
+  };
+
   return (
     <div className="cart-popup-container">
-      <div className="cart-popup">
-        <button className="close-button" onClick={props.onCloseCart}>
-          x
-        </button>
-
-        <Cart onContinueClick={showUserDetailsHandler} />
-        <div className={`user-details-container ${showUserDetails ? "" : "hidden"}`}>
+      <button className="close-button" onClick={onCloseCartHandler}>
+        x
+      </button>
+      <div className={`cart-popup ${showUserDetails ? "flip" : ""}`}>
+        <div className="cart-section-container">
+          <Cart onContinueClick={showUserDetailsHandler} />
+        </div>
+        <div className="cart-section-container">
           <UserDetails />
         </div>
       </div>

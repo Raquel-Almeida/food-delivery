@@ -32,7 +32,9 @@ export default function Pagination(props) {
   // Returns which group of page numbers should be displayed
   const getPaginationGroup = () => {
     let start = Math.floor((currentPage - 1) / props.pageLimit) * props.pageLimit;
-    return new Array(props.pageLimit).fill().map((_, idx) => start + idx + 1);
+    return new Array(Math.min(Math.floor(props.list.length / props.dataLimit), props.pageLimit))
+      .fill()
+      .map((_, idx) => start + idx + 1);
   };
 
   const handleItemClick = (id) => {
@@ -47,7 +49,7 @@ export default function Pagination(props) {
         ))}
       </div>
       <div className="pagination">
-        <button onClick={goToPreviousPage} className={`prev ${currentPage === 1 ? "disabled" : ""}`}>
+        <button onClick={goToPreviousPage} className={`prev ${currentPage <= 1 ? "disabled" : ""}`}>
           {"<"}
         </button>
 
@@ -64,7 +66,7 @@ export default function Pagination(props) {
           </button>
         ))}
 
-        <button onClick={goToNextPage} className={`next ${currentPage === pages ? "disabled" : ""}`}>
+        <button onClick={goToNextPage} className={`next ${currentPage >= pages ? "disabled" : ""}`}>
           {">"}
         </button>
       </div>
