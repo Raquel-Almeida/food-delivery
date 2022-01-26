@@ -7,11 +7,11 @@ import hero from "../../assets/hero.png";
 
 import "./Header.scss";
 
-export default function Header() {
+export default function Header(props) {
   let [showCart, setShowCart] = useState(false);
 
   // Opens cart
-  const showCartHandler = () => {
+  const showCartPopupHandler = () => {
     setShowCart(true);
     document.body.setAttribute("style", "overflow-y: hidden");
   };
@@ -19,6 +19,7 @@ export default function Header() {
   // Closes cart
   const closeCartHandler = () => {
     setShowCart(false);
+
     document.body.setAttribute("style", "overflow-y: auto");
   };
 
@@ -29,7 +30,7 @@ export default function Header() {
           <img className="logo" src={logoIcon} alt="Food Delivery Icon" />
           <h1>Food Delivery</h1>
         </div>
-        <CartButton onCartClicked={showCartHandler} />
+        <CartButton onCartClicked={showCartPopupHandler} />
       </header>
       <div className={`${showCart ? "" : "hidden"}`}>
         <CartPopup onCloseCart={closeCartHandler} />
