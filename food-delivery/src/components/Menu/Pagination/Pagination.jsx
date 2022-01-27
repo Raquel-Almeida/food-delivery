@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Pagination.scss";
 
 export default function Pagination(props) {
-  const [pages] = useState(Math.ceil(props.list.length / props.dataLimit));
+  const [pages, setPages] = useState(Math.ceil(props.list.length / props.dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
 
   // Changes currentPage to next page
@@ -32,7 +32,14 @@ export default function Pagination(props) {
   // Returns which group of page numbers should be displayed
   const getPaginationGroup = () => {
     let start = Math.floor((currentPage - 1) / props.pageLimit) * props.pageLimit;
-    return new Array(Math.min(Math.floor(props.list.length / props.dataLimit), props.pageLimit))
+
+    // to stop loop
+    if (Math.ceil(props.list.length / props.dataLimit) !== pages) {
+      setPages(Math.ceil(props.list.length / props.dataLimit));
+    }
+
+    // Chooses the minimum value between the total number of pages and the first page of the groupPagination plus pageLimit
+    return new Array(Math.min(Math.ceil(props.list.length / props.dataLimit), start + props.pageLimit))
       .fill()
       .map((_, idx) => start + idx + 1);
   };
