@@ -18,15 +18,15 @@ export default function CartPopup(props) {
   };
 
   return (
-    <div className="cart-popup-container">
-      <button className="close-button" onClick={onCloseCartHandler}>
-        x
-      </button>
-      <div className={`cart-popup ${showUserDetails ? "flip" : ""}`}>
-        <div className="cart-section-container">
+    <div className="cart-popup-container" onClick={onCloseCartHandler}>
+      <div className="cart-popup" onClick={(e) => e.stopPropagation()}>
+        <button className="close-button" onClick={onCloseCartHandler}>
+          x
+        </button>
+        <div className={`user-details-container ${showUserDetails ? "hidden" : ""}`}>
           <Cart onContinueClick={showUserDetailsHandler} />
         </div>
-        <div className="cart-section-container">
+        <div className={`user-details-container ${showUserDetails ? "" : "hidden"}`}>
           <UserDetails />
         </div>
       </div>
