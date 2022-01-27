@@ -9,6 +9,7 @@ import "./MealsMenu.scss";
 export default function MealsMenu() {
   const [meals, setMeals] = useState([]);
   const [error, setError] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   let [filteredMeals, setFilteredeMeals] = useState([]);
   let [loaded, setLoaded] = useState(false);
@@ -32,6 +33,8 @@ export default function MealsMenu() {
 
   // Filters each meal by searched value and returns the ones that include it as a title, setting filtered meals
   const handleSearchMeal = (searchValue) => {
+    setCurrentPage(1);
+
     setFilteredeMeals(
       meals.filter((meal) => {
         return meal.name.toLowerCase().includes(searchValue.toLowerCase());
@@ -74,7 +77,15 @@ export default function MealsMenu() {
           <div className={`${showDetails ? "" : "hidden"}`}>
             <MealDetails meal={clickedMeal} onCloseDetails={closeDetailsHandler} />
           </div>
-          <Pagination dataLimit={6} pageLimit={3} list={filteredMeals} RenderComponent={Meal} onItemClicked={showDetailsHandler} />
+          <Pagination
+            dataLimit={6}
+            pageLimit={3}
+            list={filteredMeals}
+            RenderComponent={Meal}
+            onItemClicked={showDetailsHandler}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </section>
       ) : (
         <span>Loading...</span>
