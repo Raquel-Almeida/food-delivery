@@ -9,6 +9,7 @@ import "./Header.scss";
 
 export default function Header(props) {
   let [showCart, setShowCart] = useState(false);
+  const [showSucessMessage, setShowSucessMessage] = useState(false);
 
   // Opens cart
   const showCartPopupHandler = () => {
@@ -19,7 +20,7 @@ export default function Header(props) {
   // Closes cart
   const closeCartHandler = () => {
     setShowCart(false);
-
+    setShowSucessMessage(false);
     document.body.setAttribute("style", "overflow-y: auto");
   };
 
@@ -33,7 +34,7 @@ export default function Header(props) {
         <CartButton onCartClicked={showCartPopupHandler} />
       </header>
       <div className={`${showCart ? "" : "hidden"}`}>
-        <CartPopup onCloseCart={closeCartHandler} />
+        <CartPopup onCloseCart={closeCartHandler} showSucessMessage={showSucessMessage} setShowSucessMessage={setShowSucessMessage} />
       </div>
       <div className="hero">
         <img src={hero} alt="Pancake" />

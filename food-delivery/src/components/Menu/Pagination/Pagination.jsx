@@ -4,34 +4,34 @@ import "./Pagination.scss";
 
 export default function Pagination(props) {
   const [pages, setPages] = useState(Math.ceil(props.list.length / props.dataLimit));
-  const [currentPage, setCurrentPage] = useState(1);
 
   // Changes currentPage to next page
   function goToNextPage() {
-    setCurrentPage(currentPage + 1);
+    props.setCurrentPage(props.currentPage + 1);
   }
 
   // Changes currentPage to previous page
   function goToPreviousPage() {
-    setCurrentPage(currentPage - 1);
+    props.setCurrentPage(props.currentPage - 1);
   }
 
   // Changes the currentPage to the page number of choice
   function changePage(e) {
     const pageNumber = Number(e.target.textContent);
-    setCurrentPage(pageNumber);
+    props.setCurrentPage(pageNumber);
   }
 
   // Returns the number of items equal to the dataLimit, which will then be displayed to the user
   const getPaginatedData = () => {
-    const startIndex = currentPage * props.dataLimit - props.dataLimit;
+    const startIndex = props.currentPage * props.dataLimit - props.dataLimit;
     const endIndex = startIndex + props.dataLimit;
     return props.list.slice(startIndex, endIndex);
   };
 
   // Returns which group of page numbers should be displayed
   const getPaginationGroup = () => {
-    let start = Math.floor((currentPage - 1) / props.pageLimit) * props.pageLimit;
+    console.log("current page: " + props.currentPage);
+    let start = Math.floor((props.currentPage - 1) / props.pageLimit) * props.pageLimit;
 
     // to stop loop
     if (Math.ceil(props.list.length / props.dataLimit) !== pages) {
@@ -56,7 +56,7 @@ export default function Pagination(props) {
         ))}
       </div>
       <div className="pagination">
-        <button onClick={goToPreviousPage} className={`prev ${currentPage <= 1 ? "disabled" : ""}`}>
+        <button onClick={goToPreviousPage} className={`prev ${props.currentPage <= 1 ? "disabled" : ""}`}>
           {"<"}
         </button>
 
@@ -64,7 +64,7 @@ export default function Pagination(props) {
           <button
             key={i}
             onClick={changePage}
-            className={`pagination-item ${currentPage === item ? "active" : null} ${
+            className={`pagination-item ${props.currentPage === item ? "active" : null} ${
               // Hides pages from PaginationGroup that have no elements
               item * props.dataLimit <= pages * props.dataLimit ? null : "hidden"
             }`}
@@ -73,7 +73,7 @@ export default function Pagination(props) {
           </button>
         ))}
 
-        <button onClick={goToNextPage} className={`next ${currentPage >= pages ? "disabled" : ""}`}>
+        <button onClick={goToNextPage} className={`next ${props.currentPage >= pages ? "disabled" : ""}`}>
           {">"}
         </button>
       </div>

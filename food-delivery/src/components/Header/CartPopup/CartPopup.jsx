@@ -7,6 +7,7 @@ import "./CartPopup.scss";
 
 export default function CartPopup(props) {
   const [showUserDetails, setShowUserDetails] = useState(false);
+  const [showForm, setShowForm] = useState(true);
 
   let showUserDetailsHandler = () => {
     setShowUserDetails(true);
@@ -14,7 +15,12 @@ export default function CartPopup(props) {
 
   let onCloseCartHandler = () => {
     setShowUserDetails(false);
+    setShowForm(true);
     props.onCloseCart();
+  };
+
+  const showFormHandler = () => {
+    setShowForm(false);
   };
 
   return (
@@ -27,7 +33,12 @@ export default function CartPopup(props) {
           <Cart onContinueClick={showUserDetailsHandler} />
         </div>
         <div className={`user-details-container ${showUserDetails ? "" : "hidden"}`}>
-          <UserDetails />
+          <UserDetails
+            showForm={showForm}
+            showFormHandler={showFormHandler}
+            setShowSucessMessage={props.setShowSucessMessage}
+            showSucessMessage={props.showSucessMessage}
+          />
         </div>
       </div>
     </div>
