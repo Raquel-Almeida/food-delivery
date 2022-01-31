@@ -1,5 +1,14 @@
 @import "../../../../sass/main.scss";
 
+.submitting-message {
+  margin: 0 auto;
+  padding: 20px;
+  font-weight: bold;
+  @include flexCenter(column);
+  gap: 40px;
+  text-align: center;
+}
+
 .user-form {
   width: 100%;
 
@@ -13,14 +22,21 @@
       @include flexCenter(column);
       align-items: flex-start;
       width: 100%;
-      gap: 2px;
+      font-weight: bold;
+      gap: 5px;
+      font-size: 0.9rem;
 
       input {
         width: 100%;
-        background-color: rgb(252, 252, 252);
+        background-color: white;
         border: none;
+        font-size: 0.9rem;
         border-bottom: 1px solid rgb(150, 150, 150);
         padding: 5px;
+
+        &:focus-visible {
+          outline: none;
+        }
       }
     }
 

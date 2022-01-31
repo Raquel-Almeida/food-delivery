@@ -30,7 +30,6 @@ export default function Pagination(props) {
 
   // Returns which group of page numbers should be displayed
   const getPaginationGroup = () => {
-    console.log("current page: " + props.currentPage);
     let start = Math.floor((props.currentPage - 1) / props.pageLimit) * props.pageLimit;
 
     // to stop loop
