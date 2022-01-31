@@ -28,6 +28,7 @@ export default function MealDetails(props) {
           <img className="meal-details-img" src={`assets/${props.meal.image}`} alt="Meal" />
         </div>
         <div className="meal-details-info">
+          <div className="addthis_inline_share_toolbox"></div>
           <h4>{props.meal.name}</h4>
           <p className="meal-details-description">{props.meal.description}</p>
           <p className="toppings-title">Choose your extras:</p>

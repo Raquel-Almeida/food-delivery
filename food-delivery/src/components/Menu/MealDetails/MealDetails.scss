@@ -72,11 +72,20 @@
       @include flexCenter(column);
       align-items: flex-start;
       padding: 30px 50px;
+      position: relative;
+
+      .addthis_inline_share_toolbox {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 7px;
+        opacity: 0.9;
+      }
 
       h4 {
         color: $titleColor;
         font-family: "Bebas Neue", cursive;
-        font-size: 1.35rem;
+        font-size: 1.5rem;
         letter-spacing: 0.05rem;
         margin-bottom: 10px;
         text-transform: uppercase;
