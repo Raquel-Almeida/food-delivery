@@ -24,8 +24,27 @@
     }
 
     .search-container {
+      @include flexCenter(row);
       position: absolute;
       right: 0;
+      width: 180px;
+      height: 35px;
+      background-color: $secondaryColor;
+      border-radius: 10px;
+      box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+      outline: rgb(177, 177, 177);
+      padding: 0 10px;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background: url(../../assets/magnifying-glass.png) no-repeat 0 0;
+        background-size: 100%;
+        margin-right: 1px;
+        opacity: 0.5;
+      }
     }
   }
 
