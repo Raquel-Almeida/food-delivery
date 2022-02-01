@@ -35,7 +35,6 @@ export default function Cart(props) {
       <>
         <h6>Your Cart</h6>
         {cartItems}
-
         <div className="total-amount">
           <span>Total Amount</span>
           <span>{totalAmount}</span>
@@ -54,7 +53,7 @@ export default function Cart(props) {
           <span>Total Amount</span>
           <span>{totalAmount}</span>
         </div>
-        <button className="continue-button" onClick={props.onContinueClick}>
+        <button className="continue-button disabled" onClick={props.onContinueClick}>
           Continue
         </button>
       </>
