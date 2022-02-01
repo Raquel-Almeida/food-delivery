@@ -30,17 +30,34 @@ export default function Cart(props) {
     </ul>
   );
 
-  return (
-    <>
-      <h6>Your Cart</h6>
-      {cartItems}
-      <div className="total-amount">
-        <span>Total Amount</span>
-        <span>{totalAmount}</span>
-      </div>
-      <button className="continue-button" onClick={props.onContinueClick}>
-        Continue
-      </button>
-    </>
-  );
+  if (cartContext.items && cartContext.items.length > 0) {
+    return (
+      <>
+        <h6>Your Cart</h6>
+        {cartItems}
+
+        <div className="total-amount">
+          <span>Total Amount</span>
+          <span>{totalAmount}</span>
+        </div>
+        <button className="continue-button" onClick={props.onContinueClick}>
+          Continue
+        </button>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <h6>Your Cart</h6>
+        <p>Oops! Your cart is empty.</p>
+        <div className="total-amount">
+          <span>Total Amount</span>
+          <span>{totalAmount}</span>
+        </div>
+        <button className="continue-button" onClick={props.onContinueClick}>
+          Continue
+        </button>
+      </>
+    );
+  }
 }
