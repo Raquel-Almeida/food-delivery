@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/food-delivery/static/css/main.2487a608.css",
+    "main.js": "/food-delivery/static/js/main.f02ea1ee.js",
+    "static/js/787.6a4a984e.chunk.js": "/food-delivery/static/js/787.6a4a984e.chunk.js",
+    "static/media/hero.png": "/food-delivery/static/media/hero.58b3d3e7effc2f0b7767.png",
+    "static/media/instagram.png": "/food-delivery/static/media/instagram.91b90bc4479556fa49a3.png",
+    "static/media/twitter.png": "/food-delivery/static/media/twitter.d072fea29ddc1b132d7e.png",
+    "static/media/phone.png": "/food-delivery/static/media/phone.d4625019df1ba49d49ba.png",
+    "static/media/logo-icon.png": "/food-delivery/static/media/logo-icon.1bcaf7044ba9d6b66d37.png",
+    "static/media/add-to-cart-icon.png": "/food-delivery/static/media/add-to-cart-icon.36ab369c0acf661317ce.png",
+    "static/media/mail.png": "/food-delivery/static/media/mail.299b1670b961404518e0.png",
+    "static/media/facebook.png": "/food-delivery/static/media/facebook.4595cda14c3c32b3e29e.png",
+    "static/media/magnifying-glass.png": "/food-delivery/static/media/magnifying-glass.a27091ef0c45faf8a66e.png",
+    "index.html": "/food-delivery/index.html",
+    "main.2487a608.css.map": "/food-delivery/static/css/main.2487a608.css.map",
+    "main.f02ea1ee.js.map": "/food-delivery/static/js/main.f02ea1ee.js.map",
+    "787.6a4a984e.chunk.js.map": "/food-delivery/static/js/787.6a4a984e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2487a608.css",
+    "static/js/main.f02ea1ee.js"
+  ]
+}
