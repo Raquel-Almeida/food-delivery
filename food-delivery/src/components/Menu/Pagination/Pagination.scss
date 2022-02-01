@@ -3,7 +3,6 @@
 .pagination {
   @include flexCenter(row);
   gap: 15px;
-  padding: 80px 0;
 
   .pagination-item {
     position: relative;

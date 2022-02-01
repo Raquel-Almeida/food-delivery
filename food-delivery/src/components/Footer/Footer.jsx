@@ -12,15 +12,15 @@ export default function Footer() {
   return (
     <footer>
       <div className="brand-info">
-        <h5>FOOD DELIVERY</h5>
         <div className="address">
+          <h5>FOOD DELIVERY</h5>
           <p>Avenida da Liberdade, 287</p>
           <p>1250-096 Lisboa</p>
         </div>
         <div className="contacts">
           <div className="phone">
             <img src={phoneIcon} alt="Telephone" />
-            <a href="tel:+351982637782">+351 98 263 77 82</a>
+            <a href="tel:+351982637782">+351 982 637 782</a>
           </div>
           <div className="mail">
             <img src={mailIcon} alt="Mail" />
@@ -28,13 +28,13 @@ export default function Footer() {
           </div>
         </div>
         <div className="social">
-          <a href="https://www.google.com/">
+          <a href="https://www.facebook.com/">
             <img src={facebookIcon} alt="Facebook" />
           </a>
-          <a href="https://www.google.com/">
+          <a href="https://www.instagram.com/">
             <img src={instagramIcon} alt="Instagram" />
           </a>
-          <a href="https://www.google.com/">
+          <a href="https://twitter.com/">
             <img src={twitterIcon} alt="Twitter" />
           </a>
         </div>

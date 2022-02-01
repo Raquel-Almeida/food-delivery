@@ -7,19 +7,16 @@ import "./UserDetails.scss";
 
 export default function UserDetails(props) {
   const cartContext = useContext(CartContext);
-  const [submitting, setSubmitting] = useState(false);
   const [checkMarkToggled, setCheckMarkToggled] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmitting(true);
 
     setTimeout(() => {
-      setSubmitting(false);
       props.setShowSucessMessage(true);
       clearCart();
       checkMarkHandler();
-    }, 1000);
+    }, 0);
 
     props.showFormHandler();
   };
@@ -37,11 +34,14 @@ export default function UserDetails(props) {
   return (
     <>
       <h6 className={`${props.showSucessMessage ? "hidden" : ""}`}>Your Details</h6>
-      {submitting && <div className="submitting-message">Submitting Your Order...</div>}
+
       {props.showSucessMessage && (
         <div className="submitting-message">
           <CheckMarkAnimation checkMarkToggled={checkMarkToggled} />
-          <span className={`${checkMarkToggled ? "" : "hidden"}`}>We received your order! Thank you for your preference!</span>
+          <span className={`${checkMarkToggled ? "" : "hidden"}`}>
+            We received your order!
+            <br /> Thank you for your preference.
+          </span>
         </div>
       )}
       <div className={`user-details-container ${props.showForm ? "" : "hidden"}`}>

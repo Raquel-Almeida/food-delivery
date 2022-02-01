@@ -5,7 +5,7 @@
 .meals-menu {
   width: 100%;
   margin: 0 auto;
-  padding: 25px 10%;
+  padding: 100px 10%;
 
   .meals-menu-header {
     @include flexCenter(row);
@@ -17,7 +17,6 @@
       font-family: "Bebas Neue", cursive;
       font-size: 3.5rem;
       font-weight: 900;
-      padding: 35px;
       text-align: center;
       text-transform: uppercase;
       white-space: nowrap;
@@ -52,7 +51,7 @@
     flex-wrap: wrap;
     max-width: 1200px;
     gap: 50px;
-    margin: 0 auto;
+    margin: 60px auto;
   }
 }
 
@@ -65,16 +64,23 @@
 }
 
 @media screen and (max-width: 900px) {
-  .meals-menu-header {
-    @include flexCenter(column !important);
+  .meals-menu {
+    padding: 50px 10%;
 
-    h2 {
-      padding: 25px;
+    .meals-menu-header {
+      @include flexCenter(column !important);
+
+      h2 {
+        padding-bottom: 25px;
+      }
+
+      .search-container {
+        position: relative !important;
+      }
     }
 
-    .search-container {
-      position: relative !important;
-      margin-bottom: 50px;
+    .meals-list .data-container {
+      margin: 50px auto;
     }
   }
 }

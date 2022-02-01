@@ -4,16 +4,15 @@
 
 footer {
   @include flexCenter(row);
-  justify-content: flex-start;
   background-color: $titleColor;
   color: white;
-  gap: 50px;
-  padding: 50px 25%;
+  gap: 15%;
+  padding: 50px 0;
 
   .brand-info {
     @include flexCenter(column);
     align-items: flex-start;
-    gap: 15px;
+    gap: 20px;
 
     h5 {
       font-family: "Bebas Neue", cursive;
@@ -22,20 +21,27 @@ footer {
       letter-spacing: 1px;
       text-transform: uppercase;
       white-space: nowrap;
+      margin-bottom: 0px;
     }
 
     .contacts {
       @include flexCenter(column);
       align-items: flex-start;
+      gap: 5px;
 
-      img {
-        width: 15px;
-        margin-right: 10px;
-      }
+      .phone,
+      .mail {
+        @include flexCenter(row);
 
-      a {
-        color: white;
-        text-decoration: none;
+        img {
+          width: 18px;
+          margin-right: 6px;
+        }
+
+        a {
+          color: white;
+          text-decoration: none;
+        }
       }
     }
 
@@ -44,15 +50,20 @@ footer {
       gap: 10px;
 
       img {
-        width: 20px;
+        width: 23px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          transform: translate(0, -5px);
+        }
       }
     }
   }
 
   .map {
-    width: 350px;
+    width: 100%;
+    max-width: 350px;
     height: 200px;
-    margin: 0 0 0 auto;
 
     iframe {
       width: 100%;
@@ -68,6 +79,7 @@ footer {
     @include flexCenter(column);
     padding: 50px 10%;
     text-align: center;
+    gap: 35px;
 
     .brand-info {
       align-items: center;
@@ -75,11 +87,6 @@ footer {
       .contacts {
         align-items: center;
       }
-    }
-
-    .map {
-      width: 100%;
-      margin: 0 auto !important;
     }
   }
 }
