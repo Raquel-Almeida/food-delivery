@@ -50,11 +50,11 @@ footer {
       gap: 10px;
 
       img {
-        width: 23px;
-        transition: all 0.2s ease-in-out;
+        width: 24px;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
-          transform: translate(0, -5px);
+          transform: scale(1.1);
         }
       }
     }

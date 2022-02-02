@@ -28,8 +28,8 @@ export default function MealDetails(props) {
           </button>
           <img className="meal-details-img" src={`assets/${props.meal.image}`} alt="Meal" />
         </div>
+        <AddThis />
         <div className="meal-details-info">
-          <AddThis />
           <h4>{props.meal.name}</h4>
           <p className="meal-details-description">{props.meal.description}</p>
           <p className="toppings-title">Choose your extras:</p>

@@ -18,7 +18,7 @@ export default function CartButton(props) {
   return (
     <button className="cart-button" onClick={props.onCartClicked}>
       <img className="cart-icon" src={cartIcon} alt="Cart" />
-      <span>Cart</span>
+      <span className="cart-title">Cart</span>
       <span className="total-items">{cartItemsNumber}</span>
     </button>
   );

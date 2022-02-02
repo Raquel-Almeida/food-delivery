@@ -28,13 +28,13 @@ export default function Footer() {
           </div>
         </div>
         <div className="social">
-          <a href="https://www.facebook.com/">
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
             <img src={facebookIcon} alt="Facebook" />
           </a>
-          <a href="https://www.instagram.com/">
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
             <img src={instagramIcon} alt="Instagram" />
           </a>
-          <a href="https://twitter.com/">
+          <a href="https://twitter.com/" target="_blank" rel="noreferrer">
             <img src={twitterIcon} alt="Twitter" />
           </a>
         </div>

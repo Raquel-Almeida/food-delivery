@@ -2,6 +2,7 @@
 
 .cart-button {
   @include flexCenter(row);
+  gap: 10px;
   height: 40px;
   background-color: white;
   border: none;
@@ -11,7 +12,7 @@
   cursor: pointer;
   font-weight: bold;
   padding: 1rem;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     background-color: $primaryColor;
@@ -23,15 +24,19 @@
 
   .cart-icon {
     width: 1.1rem;
-    margin-right: 0.5rem;
   }
 
   .total-items {
     background-color: $primaryColor;
     border-radius: 25px;
     font-weight: bold;
-    margin-left: 0.75rem;
     padding: 0.2rem 0.7em;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cart-title {
+    display: none;
   }
 }

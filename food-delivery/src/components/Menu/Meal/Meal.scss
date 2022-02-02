@@ -6,9 +6,10 @@
   @include flexCenter(row);
   justify-content: space-between;
   width: calc(50% - 25px);
-  height: 35vh;
+  height: 23vh;
+  min-width: 250px;
   max-height: 250px;
-  min-height: 210px;
+  min-height: 220px;
   background-color: #f5f4f3;
   border-radius: 10px;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
@@ -24,7 +25,7 @@
   }
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   .meal-img {
@@ -39,7 +40,7 @@
     position: relative;
     height: 100%;
     gap: 10px;
-    padding: 25px 50px;
+    padding: 45px 50px;
     text-align: center;
 
     h3 {
