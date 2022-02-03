@@ -1,10 +1,10 @@
 import React from "react";
 
-import phoneIcon from "../../assets/phone.png";
-import mailIcon from "../../assets/mail.png";
-import facebookIcon from "../../assets/facebook.png";
-import instagramIcon from "../../assets/instagram.png";
-import twitterIcon from "../../assets/twitter.png";
+import phoneIcon from "../../assets/social-icons/phone.png";
+import mailIcon from "../../assets/social-icons/mail.png";
+import facebookIcon from "../../assets/social-icons/facebook.png";
+import instagramIcon from "../../assets/social-icons/instagram.png";
+import twitterIcon from "../../assets/social-icons/twitter.png";
 
 import "./Footer.scss";
 

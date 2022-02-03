@@ -15,7 +15,7 @@ export default function MealsMenu() {
   let [loaded, setLoaded] = useState(false);
 
   let [showDetails, setShowDetails] = useState(false);
-  let [clickedMeal, setClickedMeal] = useState({ name: null, description: null, extras: [] });
+  let [clickedMeal, setClickedMeal] = useState({ image: "", name: null, description: null, extras: [] });
 
   // Fetches values from API & sets initial list values
   useEffect(() => {

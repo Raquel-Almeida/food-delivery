@@ -27,10 +27,10 @@ export default function Header(props) {
   return (
     <>
       <header>
-        <div className="brand">
+        <a href="/" className="brand">
           <img className="logo" src={logoIcon} alt="Food Delivery Icon" />
           <h1>Food Delivery</h1>
-        </div>
+        </a>
         <CartButton onCartClicked={showCartPopupHandler} />
       </header>
       <div className={`${showCart ? "" : "hidden"}`}>
