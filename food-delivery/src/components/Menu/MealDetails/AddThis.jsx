@@ -15,7 +15,11 @@ const AddThis = (props) => {
 
   return (
     <>
-      <div className="addthis_inline_share_toolbox" /* TODO data-url={`http://[Your URL]`} */ data-title={"Food Delivery"}>
+      <div
+        className="addthis_inline_share_toolbox"
+        data-url={`http://https://raquel-almeida.github.io/food-delivery/`}
+        data-title={"Food Delivery"}
+      >
         <Script
           type="text/javascript"
           url="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61f0637d2b80cee1"
