@@ -19,9 +19,6 @@ export default function MealDetails(props) {
     });
   };
 
-  /* TODO */
-  console.log(props.meal.image);
-
   return (
     <div className="meal-details-container">
       <div className="meal-details">
@@ -29,7 +26,7 @@ export default function MealDetails(props) {
           <button className="close-details-button" onClick={props.onCloseDetails}>
             x
           </button>
-          <img className="meal-details-img" src={`../../../assets/meals/${props.meal.image}`} alt="Meal" />
+          <img className="meal-details-img" src={process.env.PUBLIC_URL + `/assets/meals/${props.meal.image}`} alt="Meal" />
         </div>
         <AddThis />
         <div className="meal-details-info">

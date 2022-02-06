@@ -13,7 +13,7 @@ export default function Meal(props) {
 
   return (
     <article className="meal">
-      <img className="meal-img" src={require(`../../../assets/meals/${mealsData.image}`)} alt="Meal" />
+      <img className="meal-img" src={process.env.PUBLIC_URL + `/assets/meals/${mealsData.image}`} alt="Meal" />
       <div className="meal-info">
         <h3>{mealsData.name}</h3>
         <p className="meal-description">{mealsData.description}</p>
