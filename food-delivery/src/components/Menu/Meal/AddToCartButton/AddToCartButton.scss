@@ -2,6 +2,7 @@
 
 .add-to-cart {
   @include flexCenter(row);
+  justify-content: flex-start;
   width: 35px;
   height: 35px;
   background-color: white;
@@ -13,20 +14,21 @@
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  transition: all 0.5s;
+  transition: all 0.4s;
 
   &:hover {
-    width: 120px;
+    width: 123px;
     background-color: $primaryColor;
 
     span {
-      width: 85px;
+      width: 83px;
     }
   }
 
   img {
     width: 20px;
-    height: 20px;
+
+    margin-left: 7px;
   }
 
   span {
@@ -34,7 +36,7 @@
     width: 0px;
     font-size: 0.75rem;
     overflow: hidden;
-    transition: all 0.5s;
+    transition: all 0.4s;
     text-overflow: clip;
     white-space: nowrap;
 
