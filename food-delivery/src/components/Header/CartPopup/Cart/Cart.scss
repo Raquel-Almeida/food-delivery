@@ -5,14 +5,14 @@
   min-width: 200px;
   max-height: 320px;
   overflow-y: auto;
-  background-color: #ececeb;
+  background-color: #e9e8e7;
   border-radius: 8px;
 
   .item {
     @include flexCenter(row);
     justify-content: space-between;
     width: 100%;
-    border-bottom: 1px solid rgb(207, 207, 207);
+    border-bottom: 2px solid $secondaryColor;
     padding: 10px;
 
     .info p:first-child {
@@ -52,7 +52,7 @@ ul {
   @include flexCenter(column);
   align-items: flex-start;
   width: 100%;
-  border-top: 1px solid rgb(116, 116, 116);
+  border-top: 1px solid #c9c8c5;
   padding-top: 5px;
   font-weight: 700;
 }
@@ -79,7 +79,7 @@ ul {
 
 .disabled {
   pointer-events: none;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 900px) {

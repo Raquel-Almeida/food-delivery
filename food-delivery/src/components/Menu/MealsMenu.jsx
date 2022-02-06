@@ -79,7 +79,7 @@ export default function MealsMenu() {
           </div>
           <Pagination
             dataLimit={6}
-            pageLimit={3}
+            pageLimit={5}
             list={filteredMeals}
             RenderComponent={Meal}
             onItemClicked={showDetailsHandler}

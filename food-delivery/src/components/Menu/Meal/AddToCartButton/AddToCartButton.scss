@@ -14,11 +14,10 @@
   font-size: 1rem;
   font-weight: bold;
   text-transform: uppercase;
-  transition: all 0.4s;
+  transition: all 0.5s;
 
   &:hover {
-    width: 123px;
-    background-color: $primaryColor;
+    width: 122px;
 
     span {
       width: 83px;
@@ -36,7 +35,7 @@
     width: 0px;
     font-size: 0.75rem;
     overflow: hidden;
-    transition: all 0.4s;
+    transition: all 0.5s;
     text-overflow: clip;
     white-space: nowrap;
 
