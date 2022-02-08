@@ -1,4 +1,5 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 import CartContext from "../../../../store/CartContext";
 import CheckMarkAnimation from "./CheckMarkAnimation/CheckMarkAnimation";
@@ -8,6 +9,21 @@ import "./UserDetails.scss";
 export default function UserDetails(props) {
   const cartContext = useContext(CartContext);
   const [checkMarkToggled, setCheckMarkToggled] = useState(false);
+
+  const form = useRef();
+
+  // SENDS AN EMAIL TO THE USER AFTER COMPLETING THE ORDER (VIA EMAILJS)
+  const sendEmail = () => {
+    console.log(form);
+    emailjs.sendForm("service_b2qzqpg", "template_y0pncer", form.current, "user_uA1b3G7qj7OKeGG0QEp4w").then(
+      (result) => {
+        console.log(result.text);
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,6 +35,7 @@ export default function UserDetails(props) {
     }, 0);
 
     props.showFormHandler();
+    sendEmail();
   };
 
   const clearCart = () => {
@@ -46,14 +63,14 @@ export default function UserDetails(props) {
       )}
       <div className={`user-details-container ${props.showForm ? "" : "hidden"}`}>
         <div className="user-form">
-          <form onSubmit={handleSubmit}>
+          <form ref={form} onSubmit={handleSubmit}>
             <label>
               Full Name:
-              <input type="text" placeholder="Enter your full name" required />
+              <input type="text" placeholder="Enter your full name" name="user_name" required />
             </label>
             <label>
               Address:
-              <input type="text" placeholder="Enter your address" required />
+              <input type="text" placeholder="Enter your address" name="user_address" required />
             </label>
             <label>
               Phone:
@@ -61,7 +78,7 @@ export default function UserDetails(props) {
             </label>
             <label>
               Email:
-              <input type="email" placeholder="Enter your email" required />
+              <input type="email" placeholder="Enter your email" name="user_email" required />
             </label>
             <label>
               Any special requests?
