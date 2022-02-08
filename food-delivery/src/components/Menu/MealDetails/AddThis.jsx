@@ -17,7 +17,7 @@ const AddThis = (props) => {
     <>
       <div
         className="addthis_inline_share_toolbox"
-        data-url={`http://https://raquel-almeida.github.io/food-delivery/`}
+        data-url={`https://raquel-almeida.github.io/food-delivery/`}
         data-title={"Food Delivery"}
       >
         <Script
