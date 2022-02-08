@@ -36,8 +36,8 @@ export default function CartPopup(props) {
           <UserDetails
             showForm={showForm}
             showFormHandler={showFormHandler}
-            setShowSucessMessage={props.setShowSucessMessage}
-            showSucessMessage={props.showSucessMessage}
+            setShowSuccessMessage={props.setShowSuccessMessage}
+            showSuccessMessage={props.showSuccessMessage}
           />
         </div>
       </div>

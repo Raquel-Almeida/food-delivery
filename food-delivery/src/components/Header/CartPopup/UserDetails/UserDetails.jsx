@@ -14,7 +14,6 @@ export default function UserDetails(props) {
 
   // SENDS AN EMAIL TO THE USER AFTER COMPLETING THE ORDER (VIA EMAILJS)
   const sendEmail = () => {
-    console.log(form);
     emailjs.sendForm("service_b2qzqpg", "template_y0pncer", form.current, "user_uA1b3G7qj7OKeGG0QEp4w").then(
       (result) => {
         console.log(result.text);
@@ -29,7 +28,7 @@ export default function UserDetails(props) {
     event.preventDefault();
 
     setTimeout(() => {
-      props.setShowSucessMessage(true);
+      props.setShowSuccessMessage(true);
       clearCart();
       checkMarkHandler();
     }, 0);
@@ -50,14 +49,14 @@ export default function UserDetails(props) {
 
   return (
     <>
-      <h6 className={`${props.showSucessMessage ? "hidden" : ""}`}>Your Details</h6>
+      <h6 className={`${props.showSuccessMessage ? "hidden" : ""}`}>Your Details</h6>
 
-      {props.showSucessMessage && (
+      {props.showSuccessMessage && (
         <div className="submitting-message">
           <CheckMarkAnimation checkMarkToggled={checkMarkToggled} />
           <span className={`${checkMarkToggled ? "" : "hidden"}`}>
             We received your order!
-            <br /> Thank you for your preference.
+            <br /> Please check your email for updates.
           </span>
         </div>
       )}
