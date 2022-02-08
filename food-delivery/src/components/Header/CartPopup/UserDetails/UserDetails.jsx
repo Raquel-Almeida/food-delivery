@@ -17,6 +17,7 @@ export default function UserDetails(props) {
     emailjs.sendForm("service_b2qzqpg", "template_y0pncer", form.current, "user_uA1b3G7qj7OKeGG0QEp4w").then(
       (result) => {
         console.log(result.text);
+        checkMarkHandler();
       },
       (error) => {
         console.log(error.text);
@@ -30,7 +31,6 @@ export default function UserDetails(props) {
     setTimeout(() => {
       props.setShowSuccessMessage(true);
       clearCart();
-      checkMarkHandler();
     }, 0);
 
     props.showFormHandler();
@@ -44,7 +44,7 @@ export default function UserDetails(props) {
   const checkMarkHandler = () => {
     setTimeout(() => {
       setCheckMarkToggled(true);
-    }, 1500);
+    }, 0);
   };
 
   return (
