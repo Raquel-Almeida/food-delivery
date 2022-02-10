@@ -28,12 +28,10 @@ export default function UserDetails(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setTimeout(() => {
-      props.setShowSuccessMessage(true);
-      clearCart();
-    }, 0);
-
     props.showFormHandler();
+    props.setShowSuccessMessage(true);
+
+    clearCart();
     sendEmail();
   };
 
@@ -42,9 +40,7 @@ export default function UserDetails(props) {
   };
 
   const checkMarkHandler = () => {
-    setTimeout(() => {
-      setCheckMarkToggled(true);
-    }, 0);
+    setCheckMarkToggled(true);
   };
 
   return (

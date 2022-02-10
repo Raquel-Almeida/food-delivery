@@ -30,6 +30,7 @@ export default function Cart(props) {
     </ul>
   );
 
+  // ALLOWS THE CART TO SHOW A MESSAGE TO THE USER IN CASE IT'S EMPTY
   if (cartContext.items && cartContext.items.length > 0) {
     return (
       <>
