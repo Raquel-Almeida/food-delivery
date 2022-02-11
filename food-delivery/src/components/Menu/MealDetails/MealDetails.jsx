@@ -8,6 +8,7 @@ import "./MealDetails.scss";
 export default function MealDetails(props) {
   const cartContext = useContext(CartContext);
 
+  // Adds the selected meal to the cart with its respective info (name, price and amount)
   const addToCartHandler = (e) => {
     e.preventDefault();
 

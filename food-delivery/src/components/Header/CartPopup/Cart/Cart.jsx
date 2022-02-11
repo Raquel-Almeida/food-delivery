@@ -7,8 +7,9 @@ import "./Cart.scss";
 export default function Cart(props) {
   const cartContext = useContext(CartContext);
 
-  const totalAmount = `${cartContext.totalAmount.toFixed(2)}€`;
+  const totalAmount = `${cartContext.totalAmount.toFixed(2)}€`; // Rounds to two decimals
 
+  // Removes the selected item from the cart through the useContext
   const removeItemHandler = (id) => {
     cartContext.removeItem(id);
   };
@@ -30,7 +31,7 @@ export default function Cart(props) {
     </ul>
   );
 
-  // ALLOWS THE CART TO SHOW A MESSAGE TO THE USER IN CASE IT'S EMPTY
+  // Allows the cart to show a message to the user if it's empty
   if (cartContext.items && cartContext.items.length > 0) {
     return (
       <>

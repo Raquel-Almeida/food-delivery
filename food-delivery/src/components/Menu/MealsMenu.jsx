@@ -33,6 +33,7 @@ export default function MealsMenu() {
 
   // Filters each meal by searched value and returns the ones that include it as a title, setting filtered meals
   const handleSearchMeal = (searchValue) => {
+    // When searching makes sure the first page is displayed to the user
     setCurrentPage(1);
 
     setFilteredeMeals(

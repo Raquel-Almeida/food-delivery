@@ -9,11 +9,13 @@ import "./App.css";
 
 function App() {
   return (
-    <CartProvider>
-      <Header />
-      <MealsMenu />
+    <>
+      <CartProvider>
+        <Header />
+        <MealsMenu />
+      </CartProvider>
       <Footer />
-    </CartProvider>
+    </>
   );
 }
 

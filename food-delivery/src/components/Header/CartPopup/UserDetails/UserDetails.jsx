@@ -7,12 +7,11 @@ import CheckMarkAnimation from "./CheckMarkAnimation/CheckMarkAnimation";
 import "./UserDetails.scss";
 
 export default function UserDetails(props) {
-  const cartContext = useContext(CartContext);
   const [checkMarkToggled, setCheckMarkToggled] = useState(false);
-
+  const cartContext = useContext(CartContext);
   const form = useRef();
 
-  // SENDS AN EMAIL TO THE USER AFTER COMPLETING THE ORDER (VIA EMAILJS)
+  // Sends and email to the user after completing the order (via EmailJS)
   const sendEmail = () => {
     emailjs.sendForm("service_b2qzqpg", "template_y0pncer", form.current, "user_uA1b3G7qj7OKeGG0QEp4w").then(
       (result) => {
@@ -31,14 +30,16 @@ export default function UserDetails(props) {
     props.showFormHandler();
     props.setShowSuccessMessage(true);
 
-    clearCart();
     sendEmail();
+    clearCart();
   };
 
+  // Clears all items from the cart after submit
   const clearCart = () => {
     cartContext.removeAllItems();
   };
 
+  // Sets the check mark to toggled after the email request is done
   const checkMarkHandler = () => {
     setCheckMarkToggled(true);
   };

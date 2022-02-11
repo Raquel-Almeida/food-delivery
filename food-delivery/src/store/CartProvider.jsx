@@ -65,6 +65,7 @@ const cartReducer = (state, action) => {
   return defaultCartState;
 };
 
+// Manages the CartContext data and provides it to all components that need it
 export default function CartProvider(props) {
   const [cartState, dispatchCartAction] = useReducer(cartReducer, defaultCartState);
 

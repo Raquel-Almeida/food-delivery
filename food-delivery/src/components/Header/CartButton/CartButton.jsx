@@ -8,6 +8,7 @@ import "./CartButton.scss";
 
 export default function CartButton(props) {
   // Stores the access to the CartContext component
+  // This permits this component (CartButton.jsx) to be re-evaluated each time the context changes
   const cartContext = useContext(CartContext);
 
   // Outputs the number of total cart items

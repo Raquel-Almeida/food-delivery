@@ -9,16 +9,19 @@ export default function CartPopup(props) {
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [showForm, setShowForm] = useState(true);
 
+  // Shows a page containing a form to the user after clicking continue
   let showUserDetailsHandler = () => {
     setShowUserDetails(true);
   };
 
+  // Handles the action of closing the cart popup and resets it (e.g. if the user closes the cart while on the form page, when he re-opens it the cart page will be shown)
   let onCloseCartHandler = () => {
     setShowUserDetails(false);
     setShowForm(true);
     props.onCloseCart();
   };
 
+  // Lets the form be hidden after being submitted
   const showFormHandler = () => {
     setShowForm(false);
   };

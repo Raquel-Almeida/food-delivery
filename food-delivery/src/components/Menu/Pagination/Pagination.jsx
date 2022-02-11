@@ -32,7 +32,7 @@ export default function Pagination(props) {
   const getPaginationGroup = () => {
     let start = Math.floor((props.currentPage - 1) / props.pageLimit) * props.pageLimit;
 
-    // to stop loop
+    // To stop loop
     if (Math.ceil(props.list.length / props.dataLimit) !== pages) {
       setPages(Math.ceil(props.list.length / props.dataLimit));
     }
@@ -50,6 +50,7 @@ export default function Pagination(props) {
   return (
     <div>
       <div className="data-container">
+        {/* Creates a list with the items that contain the searched/paginated value*/}
         {getPaginatedData().map((d, i) => (
           <props.RenderComponent key={i} data={d} onItemClick={handleItemClick} />
         ))}
